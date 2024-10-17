@@ -7,16 +7,16 @@ const main = async () => {
 
     // Simulate a warning
     await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate delay
-    await logToDiscord("⚠️ Low disk space warning.", "WARN");
+    await logToDiscord("Low disk space warning.", "WARN");
 
     // Simulate an error
     await logToDiscord(
-      "❌ Critical error: Cannot connect to database!",
+      "Critical error: Cannot connect to database!",
       "ERROR"
     );
   } catch (error) {
     await logToDiscord(
-      `❌ Error occurred: ${(error as Error).message}`,
+      `Error occurred: ${(error as Error).message}`,
       "ERROR"
     );
   }

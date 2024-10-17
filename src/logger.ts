@@ -45,15 +45,15 @@ export const logToDiscord = async (
   level: LogLevel = "INFO"
 ): Promise<void> => {
   try {
-    const timestamp = getISTTimestamp(); // Get IST timestamp
+    const timestamp = getISTTimestamp();
     const { emoji, color } = logStyles[level];
 
     const payload = {
-      content: `${emoji} **[${level}]** [${timestamp} IST]: ${message}`,
+      content: `${emoji} **[${level}]** [${timestamp} IST] \n\n${message}`,
       embeds: [
         {
           description: message,
-          color: parseInt(color.substring(1), 16), // Convert hex color to decimal for Discord
+          color: parseInt(color.substring(1), 16),
         },
       ],
     };
